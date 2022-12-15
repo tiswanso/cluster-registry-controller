@@ -71,16 +71,16 @@ Otherwise, configure a reachable endpoint for them in the [Cluster CR spec](http
 
     From first cluster to second cluster:
     ```
-    kubectl get cluster <FIRST-CLUSTER-NAME> --context <FIRST-CLUSTER-CONTEXT> -o yaml | pbcopy && pbpaste | kubectl apply --context <SECOND-CLUSTER-CONTEXT> -f -
+    kubectl get cluster <FIRST-CLUSTER-NAME> --context <FIRST-CLUSTER-CONTEXT> -o yaml | kubectl apply --context <SECOND-CLUSTER-CONTEXT> -f -
 
-    kubectl get secret -n cluster-registry <FIRST-CLUSTER-NAME> --context <FIRST-CLUSTER-CONTEXT> -o yaml | pbcopy && pbpaste | kubectl apply --context <SECOND-CLUSTER-CONTEXT> -f -
+    kubectl get secret -n cluster-registry <FIRST-CLUSTER-NAME> --context <FIRST-CLUSTER-CONTEXT> -o yaml | kubectl apply --context <SECOND-CLUSTER-CONTEXT> -f -
     ```
 
     From second cluster to first cluster:
     ```
-    kubectl get cluster <SECOND-CLUSTER-NAME> --context <SECOND-CLUSTER-CONTEXT> -o yaml | pbcopy && pbpaste | kubectl apply --context <FIRST-CLUSTER-CONTEXT> -f -
+    kubectl get cluster <SECOND-CLUSTER-NAME> --context <SECOND-CLUSTER-CONTEXT> -o yaml | kubectl apply --context <FIRST-CLUSTER-CONTEXT> -f -
 
-    kubectl get secret -n cluster-registry <SECOND-CLUSTER-NAME> --context <SECOND-CLUSTER-CONTEXT> -o yaml | pbcopy && pbpaste | kubectl apply --context <FIRST-CLUSTER-CONTEXT> -f -
+    kubectl get secret -n cluster-registry <SECOND-CLUSTER-NAME> --context <SECOND-CLUSTER-CONTEXT> -o yaml | kubectl apply --context <FIRST-CLUSTER-CONTEXT> -f -
     ```
 
 4. Check the status of the Cluster CRs. Note the following points:

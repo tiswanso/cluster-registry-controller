@@ -71,3 +71,6 @@ RUN wget -q -O - https://get.helm.sh/helm-v3.2.1-linux-amd64.tar.gz | tar -C /tm
 # Install kind
 RUN curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.11.1/kind-$(uname)-amd64" && \
     chmod +x ./kind && mv ./kind /usr/local/bin
+
+RUN wget -q -O - https://github.com/derailed/k9s/releases/download/v0.26.7/k9s_Linux_x86_64.tar.gz | tar -C /tmp -zxf - k9s && \
+    mv /tmp/k9s /usr/bin && chmod a+x /usr/bin/k9s

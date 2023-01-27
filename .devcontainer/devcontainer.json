@@ -1,6 +1,6 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/go:1.19",
-   "features": {
+    "image": "mcr.microsoft.com/devcontainers/go:1.19",
+    "features": {
         "ghcr.io/devcontainers/features/common-utils:1": {
             "installZsh": "true",
             "username": "vscode",
@@ -15,14 +15,15 @@
         //    "version": "latest",
         //    "ppa": "false"
         //},
-        "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
         "ghcr.io/mpriscella/features/kind:1": {
           "version": "latest"
         },
-        "ghcr.io/devcontainers/features/docker-from-docker:1": {},
-        "ghcr.io/dhoeric/features/k9s:1": {
-            "version": "latest"
-        }
+        "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+        //"ghcr.io/devcontainers/features/docker-from-docker:1": {},
+        //"ghcr.io/dhoeric/features/k9s:1": {
+        //    "version": "latest"
+        //}
     },
     "runArgs": [
         "--cap-add=SYS_PTRACE",
